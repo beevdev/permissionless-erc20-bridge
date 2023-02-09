@@ -1,5 +1,15 @@
 # Permissionless ERC20 Bridge
 
+Inspired by [gTrade](https://gains.trade/bridge).
+
+![flow](permissionless-erc20-bridge.svg)
+
+Example: Send tokens from Mumbai to Fantom Testnet
+
+https://testnet.layerzeroscan.com/10109/address/0x580a10fcb460acbba9318751768db8339abf8c8c/message/10112/address/0x0216656596d1c29a7ad426c2ffeee2627bae3799/nonce/3
+
+## Compile contract
+
 ```
 yarn hardhat compile
 ```

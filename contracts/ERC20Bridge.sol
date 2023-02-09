@@ -49,7 +49,7 @@ contract ERC20Bridge is NonblockingLzApp, ERC20BridgeRateLimiter {
         return abi.encode(MintMessage({to: to, amount: amount}));
     }
 
-    // @notice Mints GNS bridged from the other side, can only be invoked by a trusted remote
+    // @notice Mints BEE bridged from the other side, can only be invoked by a trusted remote
     // @param payload message sent from the other side
     function _nonblockingLzReceive(
         uint16 srcChainId,
@@ -68,7 +68,7 @@ contract ERC20Bridge is NonblockingLzApp, ERC20BridgeRateLimiter {
         emit MintMessageReceived(srcChainId, message.to, message.amount);
     }
 
-    // @notice Burns GNS from caller, then sends a cross-chain message to the destination chain.
+    // @notice Burns BEE from caller, then sends a cross-chain message to the destination chain.
     // @param dstChainId The **LayerZero** destination chain ID.
     function bridgeTokens(
         uint16 dstChainId,

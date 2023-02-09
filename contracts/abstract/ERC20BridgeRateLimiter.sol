@@ -42,7 +42,7 @@ abstract contract ERC20BridgeRateLimiter is EpochBasedLimiter {
     function tryBurn(address from, uint amount) internal whenNotPaused {
         require(amount <= epochLimit, "AMOUNT_TOO_HIGH");
         require(!blacklist[from], "BLACKLISTED");
-        token.burn(from, amount);
+        token.burnFrom(from, amount);
 
         emit Burned(from, amount);
     }

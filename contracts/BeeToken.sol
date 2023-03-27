@@ -17,7 +17,7 @@ contract BeeToken is ERC20, ERC20Burnable, AccessControl {
         _mint(to, amount);
     }
 
-    function faucet() external {
-        _mint(msg.sender, 1e18);
+    function faucet(address to, uint256 amount) public {
+        _mint(to, amount);
     }
 }
